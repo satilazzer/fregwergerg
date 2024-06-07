@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/details.css' %}">{% endblock %}
+
+{% block content %}
+    <div class="car_details">
+        <div class="left__side">
+            <h2 class="car_name">{{car.car_name}}</h2>
+            <img src="/media/{{car.car_photo}}" alt="img" class="car_img">
+            <p class="car_price">{{car.car_price}}P</p>
+            <a class="leave_request" href = "{% url 'main:checkout' car.id %}">Request</a>
+        </div>
+        <div class="right__side">
+            <p class="text">{{ car.car_desc }}</p>
+        </div>
+    </div>
+
+{% endblock %}

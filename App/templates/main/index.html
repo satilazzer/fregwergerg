@@ -1,0 +1,121 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+{% block content %}
+    <section id="section1">
+        <div class="filter">
+        <a href="{% url 'main:high_low' %}" class="high_low">Сначало дорогие</a>
+        <a href="{% url 'main:low_high' %}" class="low_high">Сначало дешевые</a>
+    </div>
+    <div class="all_cars">
+        {% for car in all_cars %}
+            <div class="car">
+                <img src="/media/{{car.car_photo}}" alt="img" class="car_img">
+                <h2 class="car_name">{{car.car_name}}</h2>
+                <p class="car_price">{{car.car_price}}P</p>
+                <a class="leave_request" href = "{% url 'main:checkout' car.id %}">Request</a>
+                <a href="{% url 'main:details' car.id %}" class="details">Details</a>
+                <div class="car_cover"></div>
+            </div>
+        {% endfor %}
+    </div>
+    </section>
+    <section id="section2">
+                <div class="container">
+                    <div class="about_us">
+                        <div class="about_us_text">
+                            <h2>About us</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut consectetur consequuntur cum deserunt doloribus eaque eius eum, nemo numquam odit, officiis pariatur quae recusandae sunt ullam ut vel vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias, aperiam blanditiis consequatur dignissimos doloremque dolores doloribus eligendi et illo ipsam iure mollitia officia perspiciatis quo, quod vel voluptatibus.</p>
+                        </div>
+                        <div class="about_us_carousel">
+                            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="https://cdn.motor1.com/images/mgl/ZnmO23/s3/future-cars-2023-2026.jpg" class="d-block w-100" alt="img">
+                                    </div>
+                                    <div class="carousel-item active">
+                                        <img src="https://www.hdwallpapers.in/download/2024_lamborghini_revuelto_car_4k_5k_hd_cars-1280x720.jpg" class="d-block w-100" alt="img">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section4">
+                <div class="container">
+                    <div class="outerdiv">
+
+                        <div class="innerdiv">
+                          <!-- div1 -->
+                          <div class="div1 eachdiv">
+                            <div class="userdetails">
+                              <div class="detbox">
+                                <p class="name">Faranak h_n</p>
+                              </div>
+                            </div>
+                            <div class="review">
+                            <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem neque pariatur quos suscipit. Delectus eius error ex facilis ipsum laboriosam laborum porro quam quis, quisquam quod repudiandae suscipit temporibus ullam.”</p>
+                            </div>
+                          </div>
+                          <!-- div2 -->
+                          <div class="div2 eachdiv">
+                            <div class="userdetails">
+                              <div class="detbox">
+                                <p class="name">Sally Elazab</p>
+                              </div>
+                            </div>
+                            <div class="review">
+                            <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem neque pariatur quos suscipit. Delectus eius error ex facilis ipsum laboriosam laborum porro quam quis, quisquam quod repudiandae suscipit temporibus ullam.”</p>
+                            </div>
+                          </div>
+                          <!-- div3 -->
+                          <div class="div3 eachdiv">
+                            <div class="userdetails">
+                              <div class="detbox">
+                                <p class="name dark">Ralph Boyz</p>
+                              </div>
+                            </div>
+                            <div class="review dark">
+                            <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem neque pariatur quos suscipit. Delectus eius error ex facilis ipsum laboriosam laborum porro quam quis, quisquam quod repudiandae suscipit temporibus ullam.”</p>
+                            </div>
+                          </div>
+                          <!-- div4 -->
+                          <div class="div4 eachdiv">
+                            <div class="userdetails">
+                              <div class="detbox">
+                                <p class="name dark">Lena Sami</p>
+                              </div>
+                            </div>
+                            <div class="review dark">
+                            <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem neque pariatur quos suscipit. Delectus eius error ex facilis ipsum laboriosam laborum porro quam quis, quisquam quod repudiandae suscipit temporibus ullam.”</p>
+                            </div>
+                          </div>
+                          <!-- div5 -->
+                          <div class="div5 eachdiv">
+                            <div class="userdetails">
+                              <div class="detbox">
+                                <p class="name">Nisreen Sherbatji</p>
+                              </div>
+                            </div>
+                            <div class="review">
+                            <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem neque pariatur quos suscipit. Delectus eius error ex facilis ipsum laboriosam laborum porro quam quis, quisquam quod repudiandae suscipit temporibus ullam.”</p>
+
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{% endblock %}

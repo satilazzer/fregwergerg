@@ -1,0 +1,25 @@
+.car_details{
+    padding: 100px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right__side{
+    width: 50%;
+}
+
+.left__side{
+    width: 50%;
+}
+
+.leave_request{
+    padding: 10px;
+    border: 2px #000 solid;
+    border-radius: 5px;
+}
+
+.car_price{
+    margin-top: 20px;
+}
+
+
